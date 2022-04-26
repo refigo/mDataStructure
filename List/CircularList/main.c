@@ -27,9 +27,8 @@ int main()
 
         printf("get [1]: %d\n", getDLElement(pList, 1)->data);
         displayCircularList(pList);
-        deleteCircularList(&pList);
-        if (pList == NULL)
-            printf("good\n");
+        deleteCircularList(pList);
+        pList = NULL;
     }
     return (0);
 }

@@ -1,9 +1,9 @@
 #ifndef _CIRCULARLIST_
-#define _CIRCULARLIST_
+# define _CIRCULARLIST_
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
 
 typedef struct CircularListNodeType
 {
@@ -17,21 +17,21 @@ typedef struct CircularListType
 	CircularListNode	headerNode;		// ��� ���(Header Node)
 } CircularList;
 
-CircularList* createCircularList();
-void deleteCircularList(CircularList** pList);
-int addDLElement(CircularList* pList, int position, CircularListNode element);
-int removeDLElement(CircularList* pList, int position);
-void clearCircularList(CircularList* pList);
-int getCircularListLength(CircularList* pList);
-CircularListNode* getDLElement(CircularList* pList, int position);
-void displayCircularList(CircularList* pList);
+CircularList*		createCircularList();
+void				deleteCircularList(CircularList* pList);
+int					addCLElement(CircularList* pList, int position, CircularListNode element);
+int					removeCLElement(CircularList* pList, int position);
+void				clearCircularList(CircularList* pList);
+int					getCircularListLength(CircularList* pList);
+CircularListNode*	getCLElement(CircularList* pList, int position);
+void				displayCircularList(CircularList* pList);
 
 #endif
 
 #ifndef _COMMON_LIST_DEF_
-#define _COMMON_LIST_DEF_
+# define _COMMON_LIST_DEF_
 
-#define TRUE		1
-#define FALSE		0
+# define TRUE		1
+# define FALSE		0
 
 #endif

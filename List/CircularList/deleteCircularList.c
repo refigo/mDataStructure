@@ -1,8 +1,9 @@
 #include "circularlist.h"
 
-void deleteCircularList(CircularList** pList)
+void deleteCircularList(CircularList* pList)
 {
-    clearCircularList(*pList);
-    free(*pList);
-    *pList = NULL;
+    if (pList == NULL)
+        return ;
+    clearCircularList(pList);
+    free(pList);
 }

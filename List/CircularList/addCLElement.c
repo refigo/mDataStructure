@@ -1,6 +1,6 @@
 #include "circularlist.h"
 
-int addDLElement(CircularList* pList, int position, CircularListNode element)
+int addCLElement(CircularList* pList, int position, CircularListNode element)
 {
     CircularListNode    *preNode;
     CircularListNode    *newNode;
@@ -9,6 +9,8 @@ int addDLElement(CircularList* pList, int position, CircularListNode element)
     if (pList == NULL || pList->currentElementCount < position || position < 0)
         return (FALSE);
     newNode = malloc(sizeof(CircularList));
+    if (newNode == NULL)
+        return (FALSE);
     *newNode = element;
     preNode = &(pList->headerNode);
     idx = -1;
