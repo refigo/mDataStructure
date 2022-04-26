@@ -8,12 +8,12 @@ int removeLLElement(LinkedList* pList, int position)
 
     if (!pList)
     {
-        printf("Error in removeLLElement: pList is null\n");
+        printf("Error: pList is null in removeLLElement\n");
         return (FALSE);
     }
     if (position < 0 || position >= (pList->currentElementCount))
     {
-        printf("Error in removeLLElement: position out of range\n");
+        printf("Error: position out of range in removeLLElement\n");
         return (FALSE);
     }
     preNode = &(pList->headerNode);

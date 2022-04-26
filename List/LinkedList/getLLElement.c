@@ -7,13 +7,13 @@ ListNode* getLLElement(LinkedList* pList, int position)
     
     if (!pList)
     {
-        printf("Error in getLLElement: pList is null\n");
+        printf("Error: pList is null in getLLElement\n");
         return (NULL);
     }
     if (position < 0 || position >= (pList->currentElementCount))
     {
-        printf("Error in getLLElement: position out of range\n");
-        return (FALSE);
+        printf("Error: position out of range in getLLElement\n");
+        return (NULL);
     }
     node = &(pList->headerNode);
     i = -1;

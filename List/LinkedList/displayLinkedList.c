@@ -1,5 +1,4 @@
 #include "linkedlist.h"
-#include <stdio.h>
 
 void    displayLinkedList(LinkedList *pList)
 {
@@ -8,14 +7,14 @@ void    displayLinkedList(LinkedList *pList)
 
     if (!pList)
     {
-        printf("Error in displayLinkedList: pList is null\n");
+        printf("Error: pList is null in displayLinkedList\n");
         return ;
     }
     curr = pList->headerNode.pLink;
     i = 0;
     while (curr)
     {
-        printf("[%d]: %d\n", i, curr->data);
+        printf("LinkedListNode[%d]: %d\n", i, curr->data);
         curr = curr->pLink;
         i++;
     }

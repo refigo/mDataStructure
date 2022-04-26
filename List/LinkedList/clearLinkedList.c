@@ -1,5 +1,4 @@
 #include "linkedlist.h"
-#include <stdlib.h>
 
 void clearLinkedList(LinkedList* pList)
 {
@@ -8,7 +7,7 @@ void clearLinkedList(LinkedList* pList)
 
     if (!pList)
     {
-        printf("Error in clearLinkedList: pList is null\n");
+        printf("Error: pList is null in clearLinkedList\n");
         return ;
     }
     curr = pList->headerNode.pLink;

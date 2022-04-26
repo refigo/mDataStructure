@@ -4,7 +4,7 @@ int getLinkedListLength(LinkedList* pList)
 {
     if (!pList)
     {
-        printf("Error in getLinkedListLength: pList is null\n");
+        printf("Error: pList is null in getLinkedListLength\n");
         return (-1);
     }
     return (pList->currentElementCount);

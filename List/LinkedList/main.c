@@ -106,11 +106,7 @@ int main(void) {
 		printf("----------------\n");
 		printf("연결 리스트 삭제 진행\n");
 		printf("----------------\n");
-		deleteLinkedList(&list);
-		if (list) {
-			printf("연결 리스트 삭제 안됐음!\n");
-		} else {
-			printf("연결 리스트 삭제 완료!\n");
-		}
+		deleteLinkedList(list);
+		list = NULL;
 	}
 }

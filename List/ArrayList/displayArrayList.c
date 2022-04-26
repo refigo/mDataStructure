@@ -11,5 +11,5 @@ void displayArrayList(ArrayList* pList)
     }
     idx = -1;
     while (++idx < pList->currentElementCount)
-        printf("pElement[%d]: %d\n", idx, pList->pElement[idx].data);
+        printf("ArrayListNode[%d]: %d\n", idx, pList->pElement[idx].data);
 }
