@@ -22,10 +22,10 @@ int main()
         printf("after 10, 20, 30, 40 add\n");
         displayCircularList(pList);
         printf("position zero remove\n");
-        removeDLElement(pList, 0);
+        removeCLElement(pList, 0);
         printf("after remove\n");
 
-        printf("get [1]: %d\n", getDLElement(pList, 1)->data);
+        printf("get [1]: %d\n", getCLElement(pList, 1)->data);
         displayCircularList(pList);
         deleteCircularList(pList);
         pList = NULL;

@@ -2,15 +2,15 @@
 
 int removeDLElement(DoublyList* pList, int position)
 {
-    int         ret;
-    int         idx;
     DoublyListNode  *preNode;
     DoublyListNode  *delNode;
+    int         ret;
+    int         idx;
 
-    //position에 음수가 들어왔거나, current가 더 적으면
+    if (pList == NULL)
+        return (FALSE);
     if (position < 0 || pList->currentElementCount - 1 < position)
         return (FALSE);
-
     ret = 0;
     idx = 0;
     preNode = &(pList->headerNode);

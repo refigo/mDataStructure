@@ -11,7 +11,7 @@ void displayDoublyList(DoublyList* pList)
     idx = 0;
     while (idx < pList->currentElementCount)
     {
-        printf("dbly list [%d]: %d\n", idx, tmpNode->data);
+        printf("DoublyListNode[%d]: %d\n", idx, tmpNode->data);
         idx++;
         tmpNode = tmpNode->pRLink;
     }

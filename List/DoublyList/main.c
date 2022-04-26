@@ -27,7 +27,8 @@ int main()
 
         printf("get [1]: %d\n", getDLElement(pList, 1)->data);
         displayDoublyList(pList);
-        deleteDoublyList(&pList);
+        deleteDoublyList(pList);
+        pList = NULL;
     }
     return (0);
 }

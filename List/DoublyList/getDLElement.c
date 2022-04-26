@@ -2,18 +2,17 @@
 
 DoublyListNode* getDLElement(DoublyList* pList, int position)
 {
-    int             idx;
     DoublyListNode  *getNode;
+    int             idx;
 
+    if (pList == NULL)
+        return (NULL);
     getNode = &(pList->headerNode);
-    if (pList != NULL)
+    idx = -1;
+    while (idx < position)
     {
-        idx = -1;
-        while (idx < position)
-        {
-            getNode = getNode->pRLink;
-            idx++;
-        }
+        getNode = getNode->pRLink;
+        idx++;
     }
     return (getNode);
 }
