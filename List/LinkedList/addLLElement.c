@@ -8,18 +8,18 @@ int addLLElement(LinkedList* pList, int position, ListNode element)
 
     if (!pList)
     {
-        printf("Error in addLLElement: pList is null\n");
+        printf("Error: pList is null in addLLElement\n");
         return (FALSE);
     }
     if (position < 0 || position > (pList->currentElementCount))
     {
-        printf("Error in addLLElement: position out of range\n");
+        printf("Error: position out of range in addLLElement\n");
         return (FALSE);
     }
     added = malloc(sizeof(ListNode));
     if (!added)
     {
-        printf("Error in addLLElement: malloc failed\n");
+        printf("Error: malloc failed in addLLElement\n");
         return (FALSE);
     }
     (*added) = element;

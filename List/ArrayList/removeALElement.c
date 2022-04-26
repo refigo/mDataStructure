@@ -10,7 +10,7 @@ int removeALElement(ArrayList* pList, int position)
         printf("Error: pList is null in removeALElement\n");
         return (FALSE);
     }
-    if (pList->currentElementCount - 1 < position)
+    if (position < 0 || pList->currentElementCount - 1 < position)
     {
         printf("Error: position is out of range in removeALElement\n");
         return (FALSE);
