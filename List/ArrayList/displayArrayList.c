@@ -1,6 +1,4 @@
-
 #include "arraylist.h"
-#include <stdio.h>
 
 void displayArrayList(ArrayList* pList)
 {

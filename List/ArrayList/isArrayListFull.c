@@ -1,4 +1,3 @@
-
 #include "arraylist.h"
 
 int isArrayListFull(ArrayList* pList)

@@ -1,6 +1,4 @@
-
 #include "arraylist.h"
-#include <stdlib.h>
 
 void deleteArrayList(ArrayList** pList)
 {

@@ -1,4 +1,3 @@
-
 #include "arraylist.h"
 
 int removeALElement(ArrayList* pList, int position)

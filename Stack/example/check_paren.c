@@ -7,7 +7,7 @@ void	display(LinkedStack *pStack)
 	StackNode *node;
 
 	node = pStack->pTopElement;
-	while (node != 0)
+	while (node)
 	{
 		printf("%c ", node->data);
 		node = node->pLink;
@@ -29,25 +29,30 @@ int checkMatching(LinkedStack *pStack, char paren)
 
 int main(int argc, char **argv)
 {
-	int	i = 0;
-	char *input = argv[1];
 	LinkedStack *pStack;
-	StackNode element;
+	StackNode	element;
+	char 		*input;
+	int			i;
 
+	if (argc > 1)
+		input = argv[1];
+	else
+		input = "[ { ( ) } ]";
 	pStack = createLinkedStack();
-
 	if (input == NULL)
 		return (1);
-	while (input[i])
+	i = -1;
+	while (input[++i])
 	{
 		if (input[i] == '(' || input[i] == '{' || input[i] == '[')
-		{	
+		{
 			element.data = input[i];
 			pushLS(pStack, element);
 		}
 		else if (input[i] == ')' || input[i] == '}' || input[i] == ']')
 		{
-			if (isLinkedStackEmpty(pStack) == TRUE || checkMatching(pStack, input[i]) == FALSE)
+			if (isLinkedStackEmpty(pStack) == TRUE \
+				|| checkMatching(pStack, input[i]) == FALSE)
 			{
 				printf("Unmatching!\n");
 				deleteLinkedStack(pStack);
@@ -55,7 +60,6 @@ int main(int argc, char **argv)
 			}
 			popLS(pStack);
 		}
-		i++;
 		//display(pStack);
 	}
 	if (isLinkedStackEmpty(pStack) == TRUE)

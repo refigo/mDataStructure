@@ -1,4 +1,3 @@
-
 #include "arraylist.h"
 
 void clearArrayList(ArrayList* pList)
