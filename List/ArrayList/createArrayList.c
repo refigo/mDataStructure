@@ -7,13 +7,13 @@ ArrayList   *createArrayList(int maxElementCount)
 
 	if (maxElementCount <= 0)
 	{
-		printf("Error in createArrayList: maxElementCount should positive\n");
+		printf("Error: maxElementCount should positive in createArrayList\n");
 		return (NULL);
 	}
 	ret = malloc(sizeof(ArrayList));
 	if (!ret)
 	{
-		printf("Error in createArrayList: malloc failed\n");
+		printf("Error: malloc failed in createArrayList\n");
 		return (NULL);
 	}
 	ret->maxElementCount = maxElementCount;
@@ -21,7 +21,7 @@ ArrayList   *createArrayList(int maxElementCount)
 	node = malloc(sizeof(ArrayListNode) * maxElementCount);
 	if (!node)
 	{
-		printf("Error in createArrayList: malloc failed\n");
+		printf("Error: malloc failed in createArrayList\n");
 		return (NULL);
 	}
 	ret->pElement = node;

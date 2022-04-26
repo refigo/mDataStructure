@@ -2,22 +2,22 @@
 
 int addALElement(ArrayList* pList, int position, ArrayListNode element)
 {
-    int cnt = 0;
-    int idx = 0;
+    int cnt;
+    int idx;
 
     if (!pList)
     {
-        printf("Error in addALElement: pList is null\n");
+        printf("Error: pList is null in addALElement\n");
         return (FALSE);
     }
     if (pList->currentElementCount == pList->maxElementCount)
     {
-        printf("Error in addALElement: array is full\n");
+        printf("Error: array is full in addALElement\n");
         return (FALSE);
     }
     if (pList->maxElementCount - 1 < position)
     {
-        printf("Error in addALElement: index out of range\n");
+        printf("Error: index out of range in addALElement\n");
         return (FALSE);
     }
     if (pList->currentElementCount > position)
@@ -32,9 +32,7 @@ int addALElement(ArrayList* pList, int position, ArrayListNode element)
         pList->pElement[position] = element;
     }
     else
-    {
-        pList->pElement[pList->currentElementCount] = element;
-    }
+        pList->pElement[pList->currentElementCount] = element; // current <= position < max
     pList->currentElementCount += 1;
     return (TRUE);
 }

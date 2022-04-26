@@ -2,19 +2,21 @@
 
 int removeALElement(ArrayList* pList, int position)
 {
-    int idx = pList->currentElementCount - 1;
-    int cnt = idx - position;
+    int last_idx;
+    int cnt;
 
     if (!pList)
     {
-        printf("Error in removeALElement: pList is null\n");
+        printf("Error: pList is null in removeALElement\n");
         return (FALSE);
     }
     if (pList->currentElementCount - 1 < position)
     {
-        printf("Error in removeALElement: position is out of range\n");
+        printf("Error: position is out of range in removeALElement\n");
         return (FALSE);
     }
+    last_idx = pList->currentElementCount - 1;
+    cnt = last_idx - position;
     while (cnt--)
     {
         pList->pElement[position] = pList->pElement[position + 1];

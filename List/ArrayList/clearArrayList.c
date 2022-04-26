@@ -6,10 +6,11 @@ void clearArrayList(ArrayList* pList)
 
     if (!pList)
     {
-        printf("Error in clearArrayList: pList is null\n");
+        printf("Error: pList is null in clearArrayList\n");
         return ;
     }
     idx = -1;
     while (++idx < pList->currentElementCount)
         pList->pElement[idx].data = 0;
+    pList->currentElementCount = 0;
 }

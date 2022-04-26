@@ -1,13 +1,16 @@
 #include "arraylist.h"
 
-void deleteArrayList(ArrayList** pList)
+/*
+    Not handle dangling pointer beacause this function doesn't mention it.
+*/
+
+void deleteArrayList(ArrayList* pList)
 {
     if (!pList)
     {
-        printf("Error in deleteArrayList: pList is null\n");
+        printf("Error: pList is null in deleteArrayList\n");
         return ;
     }
-    free((*pList)->pElement);
-    free(*pList);
-    *pList = 0;
+    free(pList->pElement);
+    free(pList);
 }

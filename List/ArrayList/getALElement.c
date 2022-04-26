@@ -6,12 +6,12 @@ ArrayListNode* getALElement(ArrayList* pList, int position)
 
     if (!pList)
     {
-        printf("Error in getALElement: pList is null\n");
+        printf("Error: pList is null in getALElement\n");
         return (NULL);
     }
     if (position > (pList->currentElementCount - 1))
     {
-        printf("index out of range\n");
+        printf("Error: index out of range in getALElement\n");
         return (NULL);
     }
     ret = &(pList->pElement[position]);

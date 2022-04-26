@@ -131,11 +131,7 @@ int main(void) {
 		printf("----------------\n");
 		printf("배열 리스트 삭제 진행\n");
 		printf("----------------\n");
-		deleteArrayList(&list);
-		if (list) {
-			printf("배열 리스트 삭제 안됐음!\n");
-		} else {
-			printf("배열 리스트 삭제 완료!\n");
-		}
+		deleteArrayList(list);
+		list = NULL;
 	}
 }
