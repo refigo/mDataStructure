@@ -1,6 +1,5 @@
 #include "linkedstack.h"
 
-// 순서 체킹 의사코드 작성
 void	display(LinkedStack *pStack)
 {
 	int	i;
@@ -27,20 +26,17 @@ int checkMatching(LinkedStack *pStack, char paren)
 	return (FALSE);
 }
 
-int main(int argc, char **argv)
+int	check_paren(char *input)
 {
 	LinkedStack *pStack;
 	StackNode	element;
-	char 		*input;
+	int			flag_unmatch;
 	int			i;
 
-	if (argc > 1)
-		input = argv[1];
-	else
-		input = "[ { ( ) } ]";
-	pStack = createLinkedStack();
 	if (input == NULL)
-		return (1);
+		return (ERROR);
+	pStack = createLinkedStack();
+	flag_unmatch = FALSE;
 	i = -1;
 	while (input[++i])
 	{
@@ -54,18 +50,39 @@ int main(int argc, char **argv)
 			if (isLinkedStackEmpty(pStack) == TRUE \
 				|| checkMatching(pStack, input[i]) == FALSE)
 			{
-				printf("Unmatching!\n");
-				deleteLinkedStack(pStack);
-				return (0);
+				flag_unmatch = TRUE;
+				break ;
 			}
-			popLS(pStack);
+			free(popLS(pStack));
 		}
-		//display(pStack);
 	}
-	if (isLinkedStackEmpty(pStack) == TRUE)
-		printf("Matching!\n");
+	if (flag_unmatch == TRUE || isLinkedStackEmpty(pStack) == FALSE)
+		printf("%s\t -> Unmatched\n", input);
 	else
-		printf("Unmatching!\n");
+		printf("%s\t -> Matched\n", input);
 	deleteLinkedStack(pStack);
+	return (!flag_unmatch);
+}
+
+int main(int argc, char **argv)
+{
+	char 		*input;
+	
+	if (argc > 1)
+		input = argv[1];
+	else
+		input = "[ { ( ) } ]";
+	
+	check_paren(input);
+	check_paren("(A+B)*C ");
+	check_paren("{(A+B)*C}*D");
+
+	check_paren("(A+B)*C)");
+	check_paren("((A+B)*B");
+	check_paren("{(A+B})*C*D");
+
+	check_paren("( ( A * B ) / C ) - { ( D + E ) && ( F – G ) }");
+	check_paren("( ( A * B ) / C - { ( D + E ) && ( F – G ) ) }");
+
 	return (0);
 }

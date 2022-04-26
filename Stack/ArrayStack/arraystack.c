@@ -5,7 +5,7 @@ ArrayStack* createArrayStack(int maxElementCount)
 	ArrayStack *pStack;
 
 	pStack = (ArrayStack *)malloc(sizeof(ArrayStack));
-	if (pStack == NULL)	// add: check malloc failed
+	if (pStack == NULL)
 	{
 		printf("Error: malloc failed\n");
 		return (NULL);
@@ -16,7 +16,7 @@ ArrayStack* createArrayStack(int maxElementCount)
 	if (pStack->pElement == NULL)
 	{
 		printf("Error: malloc failed\n");
-		free(pStack);	// add: free malloced before
+		free(pStack);
 		return (NULL);
 	}
 	for (int i = 0; i < maxElementCount; i++)
@@ -78,6 +78,7 @@ int isArrayStackEmpty(ArrayStack* pStack)
 	return (pStack->currentElementCount == 0);
 }
 
+/*
 int	main(void)
 {
 	ArrayStack *pStack;
@@ -101,3 +102,4 @@ int	main(void)
 	deleteArrayStack(pStack);
 	return (0);
 }
+*/
