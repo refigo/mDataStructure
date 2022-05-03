@@ -55,11 +55,11 @@ int insertRearLD(LinkedDeque* pDeque, DequeNode element)
 	return (pDeque->currentElementCount++);
 }
 
-DequeNode* deleteFrontLD(LinkedDeque* pDeque) // 양쪽에서 마지막 노드라면
+DequeNode* deleteFrontLD(LinkedDeque* pDeque)
 {
 	DequeNode	*delete_node;
 
-	if (pDeque == NULL || pDeque->currentElementCount <= 0) // empty
+	if (pDeque == NULL || pDeque->currentElementCount <= 0)
 		return (NULL);
 	delete_node = pDeque->pFrontNode;
 	pDeque->pFrontNode = delete_node->pRLink;
@@ -87,7 +87,7 @@ DequeNode* deleteRearLD(LinkedDeque* pDeque)
 	return (delete_node);
 }
 
-DequeNode* peekFrontLD(LinkedDeque* pDeque) //노드 정보만 복사하여 반환
+DequeNode* peekFrontLD(LinkedDeque* pDeque)
 {
 	DequeNode	*peek_node;
 
@@ -97,7 +97,7 @@ DequeNode* peekFrontLD(LinkedDeque* pDeque) //노드 정보만 복사하여 반�
 	if (peek_node == NULL)
 		return (NULL);
 	*peek_node = *(pDeque->pFrontNode);
-	peek_node->pRLink = NULL; // 링크를 잘라서 줄것인가? 
+	peek_node->pRLink = NULL;
 	return (peek_node);
 }
 
@@ -152,11 +152,10 @@ void	displayLinkedDeque(LinkedDeque *pDeque)
 		return ;
 	if (isLinkedDequeEmpty(pDeque))
 	{
-		printf("LinkedDeque is Empty\n");
+		printf("LinkedDeque is Empty (displayLinkedDeque)\n");
 		return ;
 	}
 	display = pDeque->pFrontNode;
-
 	for (int i = 0; display; i++)
 	{
 		printf("LinkedDeque[%d]\t%c\n", i, display->data);

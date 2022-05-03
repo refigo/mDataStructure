@@ -27,7 +27,7 @@ int enqueueAQ(ArrayQueue* pQueue, ArrayQueueNode element)
 {
 	if (isArrayQueueFull(pQueue))
 	{
-		printf("ArrayQueue is Full\n");
+		printf("ArrayQueue is Full (enqueueAQ)\n");
 		return (FALSE);
 	}
 	if (isArrayQueueEmpty(pQueue) == FALSE)
@@ -43,7 +43,7 @@ ArrayQueueNode *dequeueAQ(ArrayQueue* pQueue)
 
 	if (isArrayQueueEmpty(pQueue))
 	{
-		printf("ArrayQueue is Empty\n");
+		printf("ArrayQueue is Empty (dequeueAQ)\n");
 		return (FALSE);
 	}
 	de_node = calloc(1, sizeof(ArrayQueueNode));
@@ -67,7 +67,7 @@ ArrayQueueNode *peekAQ(ArrayQueue* pQueue)
 
 	if (isArrayQueueEmpty(pQueue))
 	{
-		printf("ArrayQueue is Empty\n");
+		printf("ArrayQueue is Empty (peekAQ)\n");
 		return (FALSE);
 	}
 	peek_node = calloc(1, sizeof(ArrayQueueNode));
@@ -80,7 +80,7 @@ ArrayQueueNode *peekAQ(ArrayQueue* pQueue)
 void deleteArrayQueue(ArrayQueue* pQueue)
 {
 	if (pQueue == NULL)
-		return;
+		return ;
 	if (pQueue->pElement != NULL)
 		free(pQueue->pElement);
 	free(pQueue);
@@ -113,7 +113,7 @@ void	displayArrayQueue(ArrayQueue* pQueue)
 		return ;
 	if (isArrayQueueEmpty(pQueue))
 	{
-		printf("ArrayQueue is Empty\n");
+		printf("ArrayQueue is Empty (displayArrayQueue)\n");
 		return ;
 	}
 	idx = pQueue->front;
