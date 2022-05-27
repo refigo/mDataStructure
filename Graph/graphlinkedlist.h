@@ -3,36 +3,36 @@
 
 typedef struct GraphVertexType
 {
-	int vertexID;		// ³ëµå ID
-	int weight;			// °¡ÁßÄ¡.
+	int vertexID; // ë…¸ë“œ ID
+	int weight;	  // ê°€ì¤‘ì¹˜.
 } GraphVertex;
 
 typedef struct ListNodeType
 {
 	GraphVertex data;
-	struct ListNodeType* pLink;
+	struct ListNodeType *pLink;
 } ListNode;
 
 typedef struct LinkedListType
 {
-	int currentElementCount;	// ÇöÀç ÀúÀåµÈ ¿ø¼ÒÀÇ °³¼ö
-	ListNode headerNode;		// Çì´õ ³ëµå(Header Node)
+	int currentElementCount; // í˜„ì¬ ì €ì¥ëœ ì›ì†Œì˜ ê°œìˆ˜
+	ListNode headerNode;	 // í—¤ë” ë…¸ë“œ(Header Node)
 } LinkedList;
 
-LinkedList* createLinkedList();
-int addLLElement(LinkedList* pList, int position, ListNode element);
-int removeLLElement(LinkedList* pList, int position);
-ListNode* getLLElement(LinkedList* pList, int position);
+LinkedList *createLinkedList();
+int addLLElement(LinkedList *pList, int position, ListNode element);
+int removeLLElement(LinkedList *pList, int position);
+ListNode *getLLElement(LinkedList *pList, int position);
 
-void clearLinkedList(LinkedList* pList);
-int getLinkedListLength(LinkedList* pList);
-void deleteLinkedList(LinkedList* pList);
+void clearLinkedList(LinkedList *pList);
+int getLinkedListLength(LinkedList *pList);
+void deleteLinkedList(LinkedList *pList);
 #endif
 
 #ifndef _COMMON_LIST_DEF_
 #define _COMMON_LIST_DEF_
 
-#define TRUE		1
-#define FALSE		0
+#define TRUE 1
+#define FALSE 0
 
 #endif
