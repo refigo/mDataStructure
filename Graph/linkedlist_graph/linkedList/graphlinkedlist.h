@@ -1,6 +1,9 @@
 #ifndef _GRAPH_LINKEDLIST_
 #define _GRAPH_LINKEDLIST_
 
+#include <stdlib.h>
+#include <string.h>
+
 typedef struct GraphVertexType
 {
 	int vertexID; // 노드 ID

@@ -1,6 +1,10 @@
 #ifndef _GRAPH_ADJMATRIX_
 #define _GRAPH_ADJMATRIX_
 
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 typedef struct ArrayGraphType
 {
 	int maxVertexCount;		// 최대 노드 개수
@@ -15,7 +19,7 @@ ArrayGraph *createArrayGraph(int maxVertexCount);
 ArrayGraph *createArrayDirectedGraph(int maxVertexCount);
 
 // 그래프 삭제
-void deleteArrayGraph(ArrayGraph *pGraph);
+void *deleteArrayGraph(ArrayGraph *pGraph);
 
 // 공백 그래프 여부 판단
 int isEmptyAG(ArrayGraph *pGraph);
@@ -54,4 +58,6 @@ void displayArrayGraph(ArrayGraph *pGraph);
 
 #define GRAPH_UNDIRECTED 1
 #define GRAPH_DIRECTED 2
+
+#define ERROR -1
 #endif
