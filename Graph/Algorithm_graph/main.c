@@ -38,19 +38,21 @@ static ArrayGraph *createAndSetGraph()
 
 int main(void)
 {
-    ArrayGraph* graph		= createAndSetGraph();
-    ArrayGraph* PrimMST		= createArrayGraph(9);
-    ArrayGraph* KruskalMST	= createArrayGraph(9);
+    ArrayGraph* graph		    = createAndSetGraph();
+    ArrayGraph* PrimMST		    = createArrayGraph(9);
+    ArrayGraph* KruskalMST	    = createArrayGraph(9);
 	ArrayGraph* DijkstraPath	= createArrayDirectedGraph(9);
+    ArrayGraph* FloydPath       = createArrayDirectedGraph(9);
     
-	printf("----- just Graph -----\n");
+
+	printf("%s----- just Graph -----%s\n", RED, EOC);
     displayArrayGraph(graph);
-	printf("----- just Graph -----\n");
+	printf("%s----- just Graph -----%s\n", RED, EOC);
 
 	kruskal(graph, KruskalMST);
 	prim(graph, PrimMST, 1);
 	dijkstra(graph, DijkstraPath, 1);
-	//Floyd
+	floyd(graph, FloydPath);
 
     return (0);
 }

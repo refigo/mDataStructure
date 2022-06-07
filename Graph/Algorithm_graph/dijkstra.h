@@ -3,7 +3,6 @@
 
 #include "heap.h"
 #include "arraygraph.h"
-#include "dfs_graph.h"
 
 #define D_INFINITY -1
 

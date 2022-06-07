@@ -1,4 +1,5 @@
 #include "dijkstra.h"
+#include "graph_algo.h"
 
 static int	findID(ArrayGraph *DijkstraPath, t_dijk *d_arr, int *checkingID)
 {
@@ -16,15 +17,15 @@ static int	findID(ArrayGraph *DijkstraPath, t_dijk *d_arr, int *checkingID)
 void	dijkstra(ArrayGraph *graph, ArrayGraph *DijkstraPath, int startVertexID)
 {
 	t_dijk	*d_arr;
-	int	currentID;
-	int	*checkingID;
-	int	i;
+	int		currentID;
+	int		*checkingID;
+	int		i;
 
 	d_arr = calloc(graph->maxVertexCount, sizeof(t_dijk));
 	checkingID = calloc(graph->maxVertexCount, sizeof(int));
-	// 안해
+	if (d_arr == NULL || checkingID == NULL)
+		return ;
 
-	// init
 	i = -1;
 	while (++i < graph->maxVertexCount)
 	{
@@ -46,6 +47,7 @@ void	dijkstra(ArrayGraph *graph, ArrayGraph *DijkstraPath, int startVertexID)
 				if (d_arr[i].distance == D_INFINITY)
 				{
 					addVertexAG(DijkstraPath, i);
+
 					d_arr[i].distance = d_arr[currentID].distance + graph->ppAdjEdge[currentID][i];
 					d_arr[i].waypointID = currentID;
 					addEdgewithWeightAG(DijkstraPath, currentID, i, graph->ppAdjEdge[currentID][i]);
@@ -53,6 +55,7 @@ void	dijkstra(ArrayGraph *graph, ArrayGraph *DijkstraPath, int startVertexID)
 				else if (d_arr[i].distance > d_arr[currentID].distance + graph->ppAdjEdge[currentID][i])
 				{
 					removeEdgeAG(DijkstraPath, d_arr[i].waypointID, i);
+					
 					d_arr[i].distance = d_arr[currentID].distance + graph->ppAdjEdge[currentID][i];
 					d_arr[i].waypointID = currentID;
 					addEdgewithWeightAG(DijkstraPath, currentID, i, graph->ppAdjEdge[currentID][i]);
@@ -61,7 +64,8 @@ void	dijkstra(ArrayGraph *graph, ArrayGraph *DijkstraPath, int startVertexID)
 		}
 		currentID = findID(DijkstraPath, d_arr, checkingID);
 	}
-	printf("\n-----Dijkstra algorithm-----\n");
+
+	printf("\n%s-----Dijkstra algorithm-----%s\n", BLUE, EOC);
 	displayArrayGraph(DijkstraPath);
-	printf("-----done Dijkstra-----\n");
+	printf("%s-----done Dijkstra-----%s\n", BLUE, EOC);
 }

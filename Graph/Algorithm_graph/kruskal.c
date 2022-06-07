@@ -42,10 +42,11 @@ void    kruskal(ArrayGraph *graph, ArrayGraph *MST)
 	i = -1;
 	while (++i < graph->maxVertexCount)
 		addVertexAG(MST,i);
-	groupID = calloc(MST->maxVertexCount, sizeof(int));
+	groupID = calloc(MST->maxVertexCount, sizeof(int)); // os야 알잘딱해라.
 	i = -1;
 	while (++i < MST->maxVertexCount)
 		groupID[i] = i;
+
 	while (isHeapEmpty(PQ) == FALSE)
 	{
 		poped = deleteminHeap(PQ);
@@ -61,7 +62,8 @@ void    kruskal(ArrayGraph *graph, ArrayGraph *MST)
 		free(poped);
 		poped = NULL;
 	}
-	printf("\n-----Kruskal algorithm-----\n");
+
+	printf("\n%s-----Kruskal algorithm-----%s\n", YELLOW, EOC);
 	displayArrayGraph(MST);
-	printf("-----done Kruskal-----\n\n");
+	printf("%s-----done Kruskal-----%s\n\n", YELLOW, EOC);
 }

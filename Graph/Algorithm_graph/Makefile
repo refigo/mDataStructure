@@ -2,17 +2,18 @@ NAME := test
 
 CC := gcc
 #CFLAGS := -Wall -Wextra -Werror
-#CFLAGS := -fsanitize=address -g
+CFLAGS := -fsanitize=address -g
 
-INCS = -I./heap/MINHEAP/ -I./graph/array_graph/ -I./graph/DFS/
+INCS = -I./heap/MINHEAP/ -I./array_graph/
 
 DIR_HEAP = ./heap/MINHEAP
-DIR_GRAPH = ./graph/array_graph
+DIR_GRAPH = ./array_graph
 
 SRCS := main.c \
 		kruskal.c \
 		prim.c \
 		dijkstra.c \
+		floyd.c \
 		$(DIR_GRAPH)/addEdgeAG.c \
 		$(DIR_GRAPH)/addVertexAG.c \
 		$(DIR_GRAPH)/checkVertexValid.c \

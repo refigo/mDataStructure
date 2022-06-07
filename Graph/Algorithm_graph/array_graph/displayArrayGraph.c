@@ -15,7 +15,12 @@ void displayArrayGraph(ArrayGraph *pGraph)
     {
         j = -1;
         while(++j < pGraph->maxVertexCount)
-            printf("%d\t", pGraph->ppAdjEdge[i][j]);
+        {
+            if (pGraph->ppAdjEdge[i][j] < 0)
+                printf("INF\t");
+            else
+                printf("%d\t", pGraph->ppAdjEdge[i][j]);
+        }
         printf("\n");
     }
 }

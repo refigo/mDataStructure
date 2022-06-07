@@ -41,6 +41,7 @@ void	prim(ArrayGraph *graph, ArrayGraph *PrimMST, int rootVertexID)
 	PQ = createminHeap(PrimMST->maxVertexCount * PrimMST->maxVertexCount / 2);
 	addVertexAG(PrimMST, rootVertexID);
 	setAdjEdgeToPQ(graph, PrimMST, PQ, rootVertexID);
+
 	while (areAllVertices(PrimMST) == FALSE && (isHeapEmpty(PQ) == FALSE))
 	{
 		poped = deleteminHeap(PQ);
@@ -52,7 +53,8 @@ void	prim(ArrayGraph *graph, ArrayGraph *PrimMST, int rootVertexID)
 		}
 		free(poped);
 	}
-	printf("\n-----Prim algorithm-----\n");
+
+	printf("\n%s-----Prim algorithm-----%s\n", GREEN, EOC);
 	displayArrayGraph(PrimMST);
-	printf("-----done Prim-----\n");
+	printf("%s-----done Prim-----%s\n", GREEN, EOC);
 }
